@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/site.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.85; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="navbar">
+
+          <a href="../home/index.html">Home</a>
+
+          <div class="dropdown">
+              <button class="dropbtn">Über mich</button>
+              <div class="dropdown-content">
+                  <a href="../mich/about.html">About</a>
+                  <a href="../mich/hobbys.html">Hobbys</a>
+                  <a href="../mich/lehrbetrieb.html">Lehrbetrieb</a>
+                  <a href="../mich/reiseziele.html">Reiseziele</a>
+              </div>
+          </div>
+
+          <div class="dropdown">
+              <button class="dropbtn">Ort</button>
+              <div class="dropdown-content">
+                  <a href="../ort/wohnort.html">Wohnort</a>
+                  <a href="../ort/geburtsort.html">Geburtsort</a>
+              </div>
+          </div>
+
+          <div class="dropdown">
+              <button class="dropbtn">Lieblingsband</button>
+              <div class="dropdown-content">
+                  <a href="../lieblingsband/metallica.html">Metallica</a>
+                  <a href="../lieblingsband/nirvana.html">Nirvana</a>
+                  <a href="../lieblingsband/pearl_jam.html">Pearl Jam</a>
+              </div>
+          </div>
+
+          <a href="../fotogalerie/fotogalerie.html">Fotogalerie</a>
+          
+          <div class="dropdown">
+              <button class="dropbtn">Gedicht</button>
+              <div class="dropdown-content">
+                  <a href="../gedichte/anzengruber.html">Anzengruber</a>
+                  <a href="../gedichte/busch.html">Busch</a>
+                  <a href="../gedichte/kempner.html">Kempner</a>
+              </div>
+          </div>
+
+          <a href="../links/links.html">Links</a>
+
+          <a href="../kontakt/kontakt.html">Kontakt</a>
+
+      </div> 
+  </nav>
+
+  <h1>Fotogalerie</h1>
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="../fotogalerie/foto_1.jpg" alt="Garage" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../fotogalerie/foto_2.jpg" alt="Bank" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../fotogalerie/foto_3.jpg" alt="Bus" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../fotogalerie/foto_4.jpg" alt="Bus" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../fotogalerie/foto_5.jpg" alt="Bus" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../fotogalerie/foto_6.jpg" alt="Zug" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../fotogalerie/foto_7.jpg" alt="Sargans" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../fotogalerie/foto_8.jpg" alt="Caprisone" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
